@@ -1,0 +1,4 @@
+output "sample" {
+  value = "grapes"
+}
+
