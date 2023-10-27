@@ -16,3 +16,22 @@ variable "list" {
 output "list_output" {
   value = var.list[0]
 }
+
+
+#############map type variables
+variable "map" {
+  default = {
+    cloud = {
+      Time = "6AM"
+      Duration = "300days"
+    }
+    devops = {
+      Time = "9AM"
+      Duration = "250days"
+    }
+  }
+}
+
+output "map_output" {
+  value = var.map["cloud"]
+}
