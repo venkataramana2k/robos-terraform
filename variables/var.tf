@@ -35,3 +35,14 @@ variable "map" {
 output "map_output" {
   value = var.map["cloud"]
 }
+
+################ tfvars while Runtime
+variable "env" {}
+output "tfvars_output" {
+  value = var.env
+}
+
+variable "fruit" {}
+output "fruit" {
+  value = var.fruit
+}
