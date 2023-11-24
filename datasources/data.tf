@@ -20,3 +20,5 @@ data "aws_security_group" "selected" {
 output "allow_all_id" {
   value = data.aws_security_group.selected.vpc_id
 }
+
+
