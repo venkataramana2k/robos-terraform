@@ -8,8 +8,7 @@ data "aws_ec2_spot_price" "example" {
   }
 }
 
-output "price"
-{
+output "t2_micro_spot_price" {
   value = data.aws_ec2_spot_price.example.spot_price
 }
 
