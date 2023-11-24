@@ -14,9 +14,9 @@ output "t2_micro_spot_price" {
 
 ###### aws security group datasource terraform  ######
 data "aws_security_group" "selected" {
-  id = "allow-all"
+  id = "sg-06ddc4457f334b890"
 }
 
 output "allow_all_id" {
-  value = data.aws_security_group.selected.id
+  value = data.aws_security_group.selected.name
 }
