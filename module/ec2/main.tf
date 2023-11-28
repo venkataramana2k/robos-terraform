@@ -42,3 +42,6 @@ resource "aws_security_group" "skype" {
 
 variable "name" {}
 
+output "skype_ip" {
+  value = aws_instance.web.public_ip
+}
