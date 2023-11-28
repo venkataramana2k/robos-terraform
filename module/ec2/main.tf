@@ -19,7 +19,7 @@ resource "null_resource" "ansible" {
       host     = aws_instance.web.public_ip
     }
     inline = [
-      "sudo set-hostname ${var.name}",
+      "sudo set-hostname ${var.name}"
     ]
   }
 
@@ -33,7 +33,7 @@ data "aws_ami" "example" {
 
 ###########Security group ###############
 resource "aws_security_group" "skype" {
-  name        = "sallow-all"
+  name        = var.name
   description = "Allow TLS inbound traffic"
 
   ingress {
