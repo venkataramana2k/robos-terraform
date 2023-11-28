@@ -8,6 +8,3 @@ module "s2" {
   name = "mongodb"
 }
 
-output "skype_ip" {
-  value = module.ec2.skype_ip
-}
