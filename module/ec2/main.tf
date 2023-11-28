@@ -5,7 +5,7 @@ resource "aws_instance" "web" {
   security_groups = [aws_security_group.skype.name]
 
   tags = {
-    Name = "venkata"
+    Name = var.name
   }
 }
 
@@ -18,7 +18,7 @@ data "aws_ami" "example" {
 
 ###########Security group ###############
 resource "aws_security_group" "skype" {
-  name        = "sallow-all"
+  name        = var.name
   description = "Allow TLS inbound traffic"
 
   ingress {
@@ -36,6 +36,9 @@ resource "aws_security_group" "skype" {
   }
 
   tags = {
-    Name = "sallow-all"
+    Name = var.name
   }
 }
+
+variable "name" {}
+
