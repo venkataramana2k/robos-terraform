@@ -18,7 +18,7 @@ data "aws_ami" "example" {
 
 ###########Security group ###############
 resource "aws_security_group" "skype" {
-  name        = sallow-all
+  name        = "sallow-all"
   description = "Allow TLS inbound traffic"
 
   ingress {
