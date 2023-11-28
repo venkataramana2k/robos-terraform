@@ -3,7 +3,7 @@ module "ec2" {
   name = "frontend"
 }
 
-module "ec2" {
+module "s2" {
   source = "./ec2"
   name = "mongodb"
 }
