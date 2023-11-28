@@ -2,7 +2,7 @@
 resource "aws_instance" "web" {
   ami           = data.aws_ami.example.id
   instance_type = "t2.micro"
-  security_groups = [aws_security_group.skype.id]
+  vpc_security_groups_id = [aws_security_group.skype.id]
 
   tags = {
     Name = var.name
