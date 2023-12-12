@@ -27,7 +27,7 @@ resource "null_resource" "ansible" {
 }
 ################# creating dns records #################
 resource "aws_route53_record" "www" {
-   zone_id = "Z0858447245XTBTK7DY06"
+   zone_id = "Z052192021EEIDGN6IJYI"
    name    = "${var.name}-dev"
    type    = "A"
    ttl     = 30
