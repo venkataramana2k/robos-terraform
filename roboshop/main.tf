@@ -21,7 +21,11 @@ variable "instances" {
 
 
 module "instances" {
-  for_each = length(var.instances)
+  count = length(var.instances)
   source = "./ec2"
   name = var.instances
+}
+
+variable "instance" {
+  default = ["frontend","mongodb","catalogue"]
 }

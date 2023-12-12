@@ -1,12 +1,11 @@
 ############ create ec2 instance in terraform ###############
 resource "aws_instance" "web" {
-  for_each = var.instances
+  count = length(var.instances)   # or use the number directly
   ami           = data.aws_ami.example.id
-  instance_type = lookup(each.value, "instance_type", "t2.micro" )
-  Name = lookup(each.key,"name", "Sadguru" )
+  instance_type = "t2.micro"
 
   tags = {
-    Name = each.key
+    Name = var.instances[count.index]    ####### or also use element(var.instances, count.index)
   }
 }
 
@@ -19,16 +18,5 @@ data "aws_ami" "example" {
 
 
 variable "instances" {
-  default = {
-    frontend = {
-      name = "frontend"
-    }
-    catalogue = {
-      instance_type= "t3.small"
-    }
-    cart = {
-      name = "cart"
-      instance_type= "t3.small"
-    }
-  }
+  default = ["frontend", "mongodb", "catalogue"]
 }
